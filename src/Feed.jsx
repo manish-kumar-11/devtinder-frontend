@@ -9,7 +9,7 @@ import { BASE_URL } from "./utils/constants";
 const Feed = () => {
   
   const feed = useSelector((store) => store.feed);
-  console.log(feed,"feddddddd")
+  
   const dispatch = useDispatch();
 
   const getFeed = async () => {
@@ -18,7 +18,7 @@ const Feed = () => {
       const res = await axios.get(BASE_URL + "/feed", {
         withCredentials: true,
       });
-      console.log("ress",res)
+     
       dispatch(addFeed(res?.data?.data));
     } catch (err) {
       //TODO: handle error

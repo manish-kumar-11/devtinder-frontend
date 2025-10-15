@@ -16,6 +16,11 @@ const EditProfile = ({ user }) => {
   const dispatch = useDispatch();
   const [showToast, setShowToast] = useState(false);
 
+  const handleChange = (e)=>{
+    setGender(e.target.value)
+
+  }
+
   const saveProfile = async () => {
     //Clear Errors
     setError("");
@@ -94,17 +99,15 @@ const EditProfile = ({ user }) => {
                     onChange={(e) => setAge(e.target.value)}
                   />
                 </label>
-                <label className="form-control w-full max-w-xs my-2">
-                  <div className="label">
-                    <span className="label-text">Gender:</span>
-                  </div>
-                  <input
-                    type="text"
-                    value={gender}
-                    className="input input-bordered w-full max-w-xs"
-                    onChange={(e) => setGender(e.target.value)}
-                  />
-                </label>
+                <div>
+      <label htmlFor="my-dropdown">Gender:</label>
+      <select id="my-dropdown" value={gender} onChange={handleChange}>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">other</option>
+      </select>
+     
+    </div>
                 <label className="form-control w-full max-w-xs my-2">
                   <div className="label">
                     <span className="label-text">About:</span>
