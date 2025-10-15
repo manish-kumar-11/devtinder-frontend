@@ -9,7 +9,7 @@ import { removeUser } from './utils/userSlice';
 
 const Navbar = () => {
    const user = useSelector((store) => store.user);
-  console.log(user);
+  //console.log(user);
    const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const Navbar = () => {
       return navigate("/login");
     } catch (err) {
       // Error logic maybe redirect to error page
-      console.log(err)
+   console.log(err)
     }
   }
   return (
